@@ -21,7 +21,7 @@ class ProjectList extends React.Component {
 
     render() {
         return(
-            <>
+            <Projects>
             <h1>PROJECT LIST</h1>
             {this.state.projects.map(project => (
                 <div onClick={()=>this.selectProject(project.id)}>
@@ -29,9 +29,38 @@ class ProjectList extends React.Component {
                 <p>{project.description}</p>
                 </div>
             ))}
-            </>
+            </Projects>
         )
     }
 }
+
+const Projects = styled.section`
+    width: 500px;
+    margin: 0 auto;
+    cursor: pointer;
+
+    h1 {
+        text-decoration: underline;
+        margin-bottom: 40px;
+    }
+    h1, h3 {
+        color: hotpink;
+    }
+    h3, p {
+        text-align: left;
+    }
+    p {
+        color: lightpink;
+        padding-left: 20px;
+    }
+    
+    div {
+        padding: 0 5px 0 10px;
+        margin-bottom: 30px;
+        &:hover {
+            box-shadow: 0 0 15px 0 lightpink;
+        }
+    }
+`
 
 export default ProjectList;
