@@ -53,6 +53,7 @@ const Project = styled.section`
     .project-header {
         border: 1px solid lightpink;
         padding: 15px;
+        border-radius: 5px;
 
         h1 {
             margin: 0;

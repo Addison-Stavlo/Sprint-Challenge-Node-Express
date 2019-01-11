@@ -57,6 +57,7 @@ const Projects = styled.section`
     div {
         padding: 0 5px 0 10px;
         margin-bottom: 30px;
+        border-radius: 5px;
         &:hover {
             box-shadow: 0 0 15px 0 lightpink;
         }
