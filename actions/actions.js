@@ -70,4 +70,24 @@ router.post('/', checkBody, checkProject, (req,res) => {
         })
 })
 
+router.put('/:id', checkAction, checkProject, checkBody, (req,res) => {
+    actionsDb.update(req.params.id,req.body)
+        .then(updatedAction => {
+            res.status(200).json({updatedAction})
+        })
+        .catch(err => {
+            res.status(500).json({message: `error encountered in updating action`})
+        })
+})
+
+router.delete('/:id', checkAction, (req,res) => {
+    actionsDb.remove(req.params.id)
+        .then(count => {
+            res.status(200).json({message: `successfully removed action of id: ${req.params.id}`})
+        })
+        .catch(err => {
+            res.status(500).json({message: `error encountered removing action...`})
+        })
+})
+
 module.exports = router;
